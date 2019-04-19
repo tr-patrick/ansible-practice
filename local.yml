@@ -1,4 +1,4 @@
-- hosts: prd-web-01
+- hosts: all
   tasks:
   - name: install example application
     copy: 
