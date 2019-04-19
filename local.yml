@@ -9,8 +9,8 @@
       owner: root
       group: root
   - name: ansible pull changes
-  cron:
-    name: "check dirs"
-    minute: "00,10,20,30,40,50"
-    hour: "*"
-    job: "/bin/ansible-pull -U https://github.com/tr-patrick/ansible-practice -i hosts"
+    cron:
+      name: "check dirs"
+      minute: "00,10,20,30,40,50"
+      hour: "*"
+      job: "/bin/ansible-pull -U https://github.com/tr-patrick/ansible-practice -i hosts"
