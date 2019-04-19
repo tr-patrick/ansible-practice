@@ -13,4 +13,4 @@
     name: "check dirs"
     minute: "00,10,20,30,40,50"
     hour: "*"
-    job: "/usr/local/bin/ansible-pull -U https://github.com/tr-patrick/ansible-practice -i hosts"
+    job: "/bin/ansible-pull -U https://github.com/tr-patrick/ansible-practice -i hosts"
