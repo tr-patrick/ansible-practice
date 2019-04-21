@@ -1,6 +1,7 @@
 - hosts: all
   tasks:
   
+# Voorbeeld een copy script met file
   - name: install example application
     copy: 
       src: ansible_test_app 
@@ -8,13 +9,17 @@
       owner: root
       group: root
   
+
+# Ansible synchronisatie die elke 10 minuten moet starten  
   - name: ansible pull changes
     cron:
       name: "check ansible"
       minute: "00,10,20,30,40,50"
       hour: "*"
       job: "/bin/ansible-pull -U https://github.com/tr-patrick/ansible-practice -i hosts"
-  
+
+
+#    Tijdzone configuratie 
   - name: Ensure NTP (for time synchronization) is installed.
     yum: name=ntp state=present
   - name: Ensure NTP is running.
