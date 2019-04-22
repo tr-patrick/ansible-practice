@@ -37,6 +37,12 @@
       dest: /etc/httpd/conf/httpd.backup
       owner: root
       group: root  
+   - name: copy web pages
+    copy: 
+      src: web_pages/
+      dest: /var/www/html/
+      owner: root
+      group: root      
   - name: apache service.
     service: name=httpd state=started enabled=yes
    
