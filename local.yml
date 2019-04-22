@@ -34,7 +34,7 @@
   - name: copy apache configuration
     copy: 
       src: apache_conf/httpd.conf
-      dest: /etc/httpd/conf/httpd.conf
+      dest: /etc/httpd/conf/httpd.backup
       owner: root
       group: root  
   - name: apache service.
@@ -45,4 +45,5 @@
       dest: /var/www/html/
       owner: root
       group: root      
+   
    
