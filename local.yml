@@ -28,7 +28,7 @@
     command: /usr/bin/timedatectl set-timezone Europe/Amsterdam
 
 
-    :
+  # installatie apache en configuratie
   - name: Install Apache.
     command: yum install --quiet -y httpd httpd-devel
   - name: Copy configuration files.
