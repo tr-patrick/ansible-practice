@@ -26,3 +26,17 @@
     service: name=ntpd state=started enabled=yes
   - name: Set timezone
     command: /usr/bin/timedatectl set-timezone Europe/Amsterdam
+
+
+    :
+  - name: Install Apache.
+    command: yum install --quiet -y httpd httpd-devel
+  - name: Copy configuration files.
+    copy:
+      src: apache_conf/httpd.conf
+      dest: /etc/httpd/conf/httpd-vhosts.backup
+      owner: root
+      group: root
+   - name: Start Apache and configure it to run at boot.
+   command: service httpd start
+   - command: chkconfig httpd on
