@@ -46,3 +46,9 @@
       owner: root
       group: root      
    
+# firewalld configuration:
+  - name: firewall configuratie
+  - firewalld:
+    service: http
+    permanent: yes
+    state: enabled
