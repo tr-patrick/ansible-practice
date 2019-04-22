@@ -31,11 +31,12 @@
   # installatie apache en configuratie
   - name: Install Apache.
     command: yum install --quiet -y httpd httpd-devel
-  - name: Copy configuration files.
-    copy:
+  - name: copy apache configuration
+    copy: 
       src: apache_conf/httpd.conf
       dest: /etc/httpd/conf/httpd.backup
       owner: root
-      group: root
-   - name: Start Apache and configure it to run at boot.
-     service: name=httpd state=started enabled=yes
+      group: root  
+  - name: apache service.
+    service: name=httpd state=started enabled=yes
+   
