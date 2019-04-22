@@ -47,7 +47,7 @@
       group: root      
    
 # firewalld configuration:
-  - name: firewall configuratie
+  # - name: firewall configuratie
   - firewalld:
     service: http
     permanent: yes
