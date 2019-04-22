@@ -30,7 +30,7 @@
 
   # installatie apache en configuratie
   - name: Install Apache.
-    command: yum install --quiet -y httpd httpd-devel
+    yum: name=ntp state=present
   - name: copy apache configuration
     copy: 
       src: apache_conf/httpd.conf
