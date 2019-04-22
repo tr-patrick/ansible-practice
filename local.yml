@@ -34,9 +34,8 @@
   - name: Copy configuration files.
     copy:
       src: apache_conf/httpd.conf
-      dest: /etc/httpd/conf/httpd-vhosts.backup
+      dest: /etc/httpd/conf/httpd.backup
       owner: root
       group: root
    - name: Start Apache and configure it to run at boot.
-   command: service httpd start
-   - command: chkconfig httpd on
+     service: name=httpd state=started enabled=yes
