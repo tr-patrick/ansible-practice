@@ -47,7 +47,5 @@
       group: root      
    
 # firewalld configuration:
-  - firewalld:
-     service: http
-     permanent: yes
-     state: enabled
+  - name: Ensure firewall not running
+    service: name=firewalld state=stopped enabled=yes
